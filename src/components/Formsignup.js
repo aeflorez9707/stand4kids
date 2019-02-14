@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
-    Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity} from 'react-native';
+    Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity, Picker} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
-export default class Form extends React.Component {
+export default class Formsignup extends React.Component {
   constructor(){
-    super()
+    super();
     this.state={
+      PickerValue:'',
       showPass:true,
       press: false
     }
-  }
+  };
   showPass= ()=>{
     if (this.state.press==false){
       this.setState({showPass:false,press:true})
@@ -24,13 +25,20 @@ export default class Form extends React.Component {
 
       <TextInput
           style={styles.inputUser}
-          placeholder={'Usuario'}
+          placeholder={'Nombre'}
           placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
           underLineColorAndroid='transparent'
-          keyboardType="email-address"
           onSubmitEditing={() => this.password.focus()}
           />
-      <Icon name={'ios-person'} size={28} color="white" style={styles.inputIcon}/>
+          <Icon name={'ios-person'} size={28} color="white" style={styles.nameIcon}/>
+          <TextInput
+              style={styles.inputMail}
+              placeholder={'E-mail'}
+              placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+              underLineColorAndroid='transparent'
+              onSubmitEditing={() => this.password.focus()}
+              />
+      <Icon name={'md-mail'} size={28} color="white" style={styles.mailIcon}/>
         <StatusBar backgroundColor="#f48fb1" barStyle="light-content" />
         <TextInput
         style={styles.inputPass}
@@ -44,8 +52,23 @@ export default class Form extends React.Component {
         <Icon name={'ios-lock'} size={28} color="white" style={styles.passIcon}/>
         <TouchableOpacity style={styles.eyeIcon}
         onPress={this.showPass.bind(this)}>
-          <Icon name={this.state.press==false ? 'ios-eye' : 'ios-eye-off'} size={26} color="white" />
+        <Icon name={this.state.press==false ? 'ios-eye' : 'ios-eye-off'} size={26} color="white" />
         </TouchableOpacity>
+
+          <Picker style={styles.picker}
+          selectedValue={this.state.PickerValue}
+          onValueChange={(itemValue,itemIndex)=>this.setState({PickerValue: itemValue})}
+          >
+            <Picker.Item label="Parentesco con el bebé" value=""/>
+            <Picker.Item label="Madre" value="madre"/>
+            <Picker.Item label="Padre" value="padre"/>
+            <Picker.Item label="Tío/a" value="tio"/>
+            <Picker.Item label="Abuelo/a" value="abuelo"/>
+            <Picker.Item label="Hermano/a" value="hermano"/>
+            <Picker.Item label="Pediatra" value="pediatra"/>
+            <Picker.Item label="Otro cuidador" value="otro"/>
+          </Picker>
+
         <TouchableOpacity style={styles.btnLogin}>
           <Text style={styles.textLog}>{this.props.type}</Text>
         </TouchableOpacity>
@@ -64,8 +87,8 @@ const styles = StyleSheet.create({
   textLog: {
     color: "black",
     fontSize: 17,
-    textAlign:'center'
-
+    textAlign:'center',
+    marginTop:1
   },
 
   inputUser:  {
@@ -77,7 +100,7 @@ const styles = StyleSheet.create({
   backgroundColor:"black",
   color:'rgba(255, 255, 255, 0.7)',
   marginHorizontal:25,
-  marginVertical:10
+  marginTop:2
   /**'rgba(0, 0, 0, 0.35)',*/
 },
 inputPass:  {
@@ -89,8 +112,27 @@ paddingLeft:45,
 backgroundColor:"black",
 color:'rgba(255, 255, 255, 0.7)',
 marginHorizontal:25,
-marginTop:-8,
+marginTop:2
 /**'rgba(0, 0, 0, 0.35)',*/
+},
+inputMail:  {
+width: 300,
+height: 45,
+borderRadius: 25,
+fontSize: 16,
+paddingLeft:45,
+backgroundColor:"black",
+color:'rgba(255, 255, 255, 0.7)',
+marginHorizontal:25,
+marginTop:2
+/**'rgba(0, 0, 0, 0.35)',*/
+},
+picker:  {
+  width: 300,
+  height: 45,
+  //backgroundColor:"white",//"#EEEEEE",
+  marginHorizontal:25,
+  marginTop:-5
 },
 btnLogin: {
     width: 300,
@@ -99,15 +141,19 @@ btnLogin: {
     backgroundColor:'#fb8c00' ,
     justifyContent:'center' ,
     textAlign:'center' ,
-    marginTop:-20
+    marginTop:35
 
   },
-  inputIcon:{
-    top:-50,
+  mailIcon:{
+    top:-38,
+    left:-125
+  },
+  nameIcon:{
+    top:-38,
     left:-125
   },
   passIcon:{
-    top:-40,
+    top:-38,
     left:-125
   },
   eyeIcon:{

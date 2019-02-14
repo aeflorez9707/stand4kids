@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
     Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity} from 'react-native';
-import Logo from '../components/Logo'
-import Form from '../components/Form'
+import Logosignup from '../components/Logosignup'
+import Formsignup from '../components/Formsignup'
 import {Actions} from 'react-native-router-flux'
-export default class Login extends React.Component {
-  signup(){
-    Actions.signup()
+export default class Signup extends React.Component {
+  goBack() {
+        Actions.login();
   }
   render() {
     return (
       <View style={styles.container}>
-       <Logo/>
-       <Form type="Iniciar sesión"/>
+       <Logosignup/>
+       <Formsignup type="Registrarse"/>
        <View style={styles.signupTextCont}>
-       <Text>¿Aún no tienes cuenta?</Text>
-       <TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Regístrate</Text>
+       <Text>¿Ya tienes una cuenta?</Text>
+       <TouchableOpacity onPress={this.goBack}>
+       <Text style={styles.signupText}> Iniciar sesión</Text>
        </TouchableOpacity>
        </View>
       </View>
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     flexDirection: 'row'
   },
-  signupButton: {
+  signupText: {
     color: "black",
     fontSize: 17,
     textAlign:'center',
