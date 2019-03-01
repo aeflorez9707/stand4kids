@@ -1,25 +1,18 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
     Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity} from 'react-native';
-import Logo from '../components/Logo'
-import Form from '../components/Form'
+import Logoperfil from '../components/Logoperfil'
+import Formperfil from '../components/Formperfil'
 import {Actions} from 'react-native-router-flux'
-export default class Login extends React.Component {
-  crear(){
-    Actions.crear();
-  }
-  signup(){
-    Actions.signup();
-  }
+export default class Perfil extends React.Component {
 
   render() {
     return (
       <View style={styles.container}>
-       <Logo/>
-       <Form type="Iniciar sesión"/>
+       <Logoperfil/>
+       <Formperfil/>
        <View style={styles.signupTextCont}>
-       <Text>¿Aún no tienes cuenta?</Text>
-       <TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Regístrate</Text>
+       <TouchableOpacity><Text style={styles.signupButton}>Crear</Text>
        </TouchableOpacity>
        </View>
       </View>
@@ -41,17 +34,6 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     flexDirection: 'row'
   },
-  btnLogin: {
-      width: 300,
-      height: 45,
-      borderRadius: 25,
-      backgroundColor:'#fb8c00' ,
-      justifyContent:'center' ,
-      textAlign:'center' ,
-      marginTop:-20
-
-    },
-
   signupButton: {
     color: "black",
     fontSize: 17,
@@ -59,5 +41,15 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     fontWeight:'500'
 
-  }
+  },
+  btnCrear: {
+      width: 300,
+      height: 45,
+      borderRadius: 25,
+      backgroundColor:'#fb8c00' ,
+      justifyContent:'center' ,
+      textAlign:'center' ,
+      marginTop:35
+
+    }
 });

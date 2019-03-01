@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
     Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
+import {Actions} from 'react-native-router-flux'
 export default class Form extends React.Component {
   constructor(){
     super()
@@ -17,6 +18,9 @@ export default class Form extends React.Component {
       this.setState({showPass:true,press:false})
 
     }
+  }
+  crear(){
+    Actions.crear();
   }
   render() {
     return (
@@ -46,7 +50,7 @@ export default class Form extends React.Component {
         onPress={this.showPass.bind(this)}>
           <Icon name={this.state.press==false ? 'ios-eye' : 'ios-eye-off'} size={26} color="white" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btnLogin}>
+        <TouchableOpacity onPress={this.crear} style={styles.btnLogin}>
           <Text style={styles.textLog}>{this.props.type}</Text>
         </TouchableOpacity>
 
