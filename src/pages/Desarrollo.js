@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
     Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity} from 'react-native';
-import Logoperfil from '../components/Logoperfil'
-import Formperfil from '../components/Formperfil'
+import Menudesarrollo from '../components/Menudesarrollo'
 import {Actions} from 'react-native-router-flux'
-export default class Perfil extends React.Component {
+export default class Desarrollo extends React.Component {
 
   render() {
     return (
       <View style={styles.container}>
-       <Logoperfil/>
-       <Formperfil/>
+       <Menudesarrollo/>
       </View>
 
     );

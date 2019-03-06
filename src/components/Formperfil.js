@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
     Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity, Picker} from 'react-native';
+import {Actions} from 'react-native-router-flux'    
 export default class Formperfil extends React.Component {
-
+  iniciar(){
+    Actions.iniciar();
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -35,6 +38,10 @@ export default class Formperfil extends React.Component {
         underLineColorAndroid='transparent'
         />
 
+        <TouchableOpacity onPress={this.iniciar} style={styles.btnLogin}>
+          <Text style={styles.textLog}>Crear</Text>
+        </TouchableOpacity>
+
 
       </View>
     );
@@ -52,6 +59,16 @@ const styles = StyleSheet.create({
     textAlign:'center',
     marginTop:1
   },
+  btnLogin: {
+      width: 300,
+      height: 45,
+      borderRadius: 25,
+      backgroundColor:'#fb8c00' ,
+      justifyContent:'center' ,
+      textAlign:'center' ,
+      marginTop:35
+
+    },
 
   inputNombre:  {
   width: 300,
