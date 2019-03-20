@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
-    Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity, Picker} from 'react-native';
+    Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity} from 'react-native';
+import { Picker } from 'react-native-picker-dropdown'
 import Icon from 'react-native-vector-icons/Ionicons'
 export default class Formsignup extends React.Component {
   constructor(){
     super();
+    this.state = { language: 'js'  }
+    this.onValueChange = this.handleValueChange.bind(this)
     this.state={
       PickerValue:'',
       showPass:true,
@@ -18,6 +21,9 @@ export default class Formsignup extends React.Component {
       this.setState({showPass:true,press:false})
 
     }
+  }
+  handleValueChange(language) {
+     this.setState({ language })
   }
   render() {
     return (
@@ -54,20 +60,21 @@ export default class Formsignup extends React.Component {
         onPress={this.showPass.bind(this)}>
         <Icon name={this.state.press==false ? 'ios-eye' : 'ios-eye-off'} size={26} color="white" />
         </TouchableOpacity>
-
-          <Picker style={styles.picker}
-          selectedValue={this.state.PickerValue}
-          onValueChange={(itemValue,itemIndex)=>this.setState({PickerValue: itemValue})}
-          >
-            <Picker.Item label="Parentesco con el bebé" value=""/>
-            <Picker.Item label="Madre" value="madre"/>
-            <Picker.Item label="Padre" value="padre"/>
-            <Picker.Item label="Tío/a" value="tio"/>
-            <Picker.Item label="Abuelo/a" value="abuelo"/>
-            <Picker.Item label="Hermano/a" value="hermano"/>
-            <Picker.Item label="Pediatra" value="pediatra"/>
-            <Picker.Item label="Otro cuidador" value="otro"/>
-          </Picker>
+        <Picker style={styles.picker}
+         selectedValue={this.state.language}
+         onValueChange={this.onValueChange}
+         mode="dialog"
+         textStyle={styles.pickerText}
+       >
+         <Picker.Item label="Parentesco con el bebé" value=""/>
+         <Picker.Item label="Madre" value="madre"/>
+           <Picker.Item label="Padre" value="padre"/>
+           <Picker.Item label="Tío/a" value="tio"/>
+           <Picker.Item label="Abuelo/a" value="abuelo"/>
+           <Picker.Item label="Hermano/a" value="hermano"/>
+           <Picker.Item label="Pediatra" value="pediatra"/>
+           <Picker.Item label="Otro cuidador" value="otro"/>
+        </Picker>
 
         <TouchableOpacity style={styles.btnLogin}>
           <Text style={styles.textLog}>{this.props.type}</Text>

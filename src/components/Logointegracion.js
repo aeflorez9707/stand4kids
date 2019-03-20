@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
     Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity} from 'react-native';
-import logo from '../imagenes/leon.png'
-export default class Logocerotres extends React.Component {
+import logo from '../imagenes/puzzle.png'
+export default class Logointegracion extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <Text style={styles.logoText}>0-3 Meses</Text>
+      <Text style={styles.logoText}>0-3 Meses: integración sensorial</Text>
        <Image source={logo} style={styles.logo} />
       </View>
     );
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   logo:  {
 
     width:180,
-    height:120,
+    height:180,
   }
 
   });

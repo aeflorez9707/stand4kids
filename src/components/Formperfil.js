@@ -1,11 +1,24 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
-    Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity, Picker} from 'react-native';
-import {Actions} from 'react-native-router-flux'    
+    Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity} from 'react-native';
+import {Actions} from 'react-native-router-flux'
+import { Picker } from 'react-native-picker-dropdown'
 export default class Formperfil extends React.Component {
+  constructor(){
+   super();
+   this.state = { language: 'js'  }
+   this.onValueChange = this.handleValueChange.bind(this)
+   this.state={
+   PickerValue:'',
+   }
+ };
+
   iniciar(){
     Actions.iniciar();
   }
+  handleValueChange(language) {
+      this.setState({ language })
+   }
   render() {
     return (
       <View style={styles.container}>
@@ -37,6 +50,18 @@ export default class Formperfil extends React.Component {
         placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
         underLineColorAndroid='transparent'
         />
+
+        <Picker style={styles.picker}
+          selectedValue={this.state.language}
+          onValueChange={this.onValueChange}
+          mode="dialog"
+          textStyle={styles.pickerText}
+        >
+          <Picker.Item label="Género:" value=""/>
+          <Picker.Item label="Femenino" value="f"/>
+            <Picker.Item label="Masculino" value="m"/>
+
+         </Picker>
 
         <TouchableOpacity onPress={this.iniciar} style={styles.btnLogin}>
           <Text style={styles.textLog}>Crear</Text>
@@ -79,7 +104,7 @@ const styles = StyleSheet.create({
   backgroundColor:"black",
   color:'rgba(255, 255, 255, 0.7)',
   marginHorizontal:25,
-  marginTop:2
+  marginTop:-10
   /**'rgba(0, 0, 0, 0.35)',*/
 },
 inputEdad:  {
@@ -91,8 +116,15 @@ paddingLeft:45,
 backgroundColor:"black",
 color:'rgba(255, 255, 255, 0.7)',
 marginHorizontal:25,
-marginTop:2
+marginTop:10
 /**'rgba(0, 0, 0, 0.35)',*/
+},
+picker:  {
+  width: 300,
+  height: 45,
+  //backgroundColor:"white",//"#EEEEEE",
+  marginHorizontal:25,
+  marginTop:10
 },
 inputDate:  {
 width: 300,
@@ -103,7 +135,7 @@ paddingLeft:45,
 backgroundColor:"black",
 color:'rgba(255, 255, 255, 0.7)',
 marginHorizontal:25,
-marginTop:2
+marginTop:10
 /**'rgba(0, 0, 0, 0.35)',*/
 },
 inputPeso:  {
@@ -115,7 +147,7 @@ paddingLeft:45,
 backgroundColor:"black",
 color:'rgba(255, 255, 255, 0.7)',
 marginHorizontal:25,
-marginTop:2
+marginTop:10
 /**'rgba(0, 0, 0, 0.35)',*/
 }
   });

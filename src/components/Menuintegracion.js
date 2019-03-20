@@ -2,25 +2,22 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,StatusBar, TextInput,TouchableHighlight,
     Animated, ScrollView, Dimensions,ImageBackground, Image, TouchableOpacity, Picker} from 'react-native';
 import {Actions} from 'react-native-router-flux'
-export default class Cerotresbotones extends React.Component {
-  integracion(){
-    Actions.integracion();
-  }
+import Perfil from '../pages/Perfil'
+export default class Menuintegracion extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-
-        <TouchableOpacity  onPress={this.integracion} style={styles.btn03}>
-          <Text style={styles.textLog}>Integración sensorial</Text>
+        <TouchableOpacity  style={styles.btn03}>
+          <Text style={styles.textLog}>Sonrie conmigo</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn36}>
-          <Text style={styles.textLog}>Motricidad</Text>
+          <Text style={styles.textLog}>Escuchemos nuevos sonidos</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn69}>
-          <Text style={styles.textLog}>Comunicación-Lenguaje</Text>
+          <Text style={styles.textLog}>Veamos nuevos objetos</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn912}>
-          <Text style={styles.textLog}>Reflejos</Text>
+          <Text style={styles.textLog}>Conozcamos nuevos aromas</Text>
         </TouchableOpacity>
 
       </View>
@@ -42,42 +39,47 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     fontSize: 20,
     textAlign:'center',
-    paddingLeft:10
+    paddingLeft:1
 
   },
   btn03: {
     width: 280,
-   height: 55,
-   backgroundColor:'#fb8c00' ,
-   justifyContent:'center' ,
-   textAlign:'center' ,
-   marginTop:35
+    height: 55,
+    backgroundColor:'#fb8c00' ,
+    justifyContent:'center' ,
+    textAlign:'center' ,
+    marginTop:35
+
+
     },
 btn36: {
   width: 280,
-   height: 55,
-   backgroundColor:'#fb8c00' ,
-   justifyContent:'center' ,
-   textAlign:'center' ,
-   marginTop:35
+  height: 55,
+  backgroundColor:'#fb8c00' ,
+  justifyContent:'center' ,
+  textAlign:'center' ,
+  marginTop:35
+
 
       },
 btn69: {
   width: 280,
-   height: 55,
-   backgroundColor:'#fb8c00' ,
-   justifyContent:'center' ,
-   textAlign:'center' ,
-   marginTop:35
+  height: 55,
+  backgroundColor:'#fb8c00' ,
+  justifyContent:'center' ,
+  textAlign:'center' ,
+  marginTop:35
+
 
      },
 btn912: {
   width: 280,
- height: 55,
- backgroundColor:'#fb8c00' ,
- justifyContent:'center' ,
- textAlign:'center' ,
- marginTop:35
+  height: 55,
+  backgroundColor:'#fb8c00' ,
+  justifyContent:'center' ,
+  textAlign:'center' ,
+  marginTop:35
+
 
        },
 logoText:  {
