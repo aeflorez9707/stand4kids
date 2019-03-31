@@ -125,8 +125,9 @@ export default class DrawerContent extends React.Component {
                 </List>
             </Content>
         </View>
+        </View>
     );
-    </View>
+
   }
 
   updateAvatar() {
