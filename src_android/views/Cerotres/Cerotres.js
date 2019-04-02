@@ -4,7 +4,7 @@ import {Platform, StyleSheet, Text, View,StatusBar,TouchableHighlight,
 import {Actions} from 'react-native-router-flux'
 import { Content } from 'native-base';
 import styles from '../../../assets/styles/styles';
-import HeaderDefault from '../../components/Header/HeaderDefault';
+import HeaderDefault from '../../components/Header/HeaderBack';
 export default class Cerotres extends React.Component {
   render() {
     return (
