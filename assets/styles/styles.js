@@ -16,6 +16,19 @@ const styles = StyleSheet.create({
       justifyContent:'flex-end',
       alignItems:'center'
     },
+
+    containerBear: {
+  flexGrow: 1,
+  justifyContent:'flex-end',
+  alignItems:'center'
+     },
+     containerSignupTextCont: {
+  flexGrow: 1,
+  alignItems: 'flex-end',
+  justifyContent: 'center',
+  paddingVertical: 16,
+  flexDirection: 'row'
+},
     //
     // Main.js
     //
@@ -25,6 +38,21 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center'
     },
+
+    logoBearText:  {
+      color: "#000000",
+      fontWeight: '500',
+      marginVertical: 15,
+      fontSize: 20,
+      paddingLeft:34
+    },
+
+    logoBear:  {
+
+      width:180,
+      height:120,
+    },
+
     logo:  {
       width:180,
       height:220,
@@ -33,6 +61,62 @@ const styles = StyleSheet.create({
       marginHorizontal:25,
       alignItems: 'center'
     },
+
+  inputUser:  {
+  width: 300,
+  height: 45,
+  borderRadius: 25,
+  fontSize: 16,
+  paddingLeft:45,
+  backgroundColor:"black",
+  color:'rgba(255, 255, 255, 0.7)',
+  marginHorizontal:25,
+  marginVertical:10
+  /**'rgba(0, 0, 0, 0.35)',*/
+},
+inputPass:  {
+width: 300,
+height: 45,
+borderRadius: 25,
+fontSize: 16,
+paddingLeft:45,
+backgroundColor:"black",
+color:'rgba(255, 255, 255, 0.7)',
+marginHorizontal:25,
+marginTop:-8,
+/**'rgba(0, 0, 0, 0.35)',*/
+},
+btnLogin: {
+    width: 300,
+    height: 45,
+    borderRadius: 25,
+    backgroundColor:'#fb8c00' ,
+    justifyContent:'center' ,
+    textAlign:'center' ,
+    marginTop:-20
+
+  },
+  inputIcon:{
+    top:-50,
+    left:-125
+  },
+  passIcon:{
+    top:-40,
+    left:-125
+  },
+  eyeIcon:{
+    top:-65,
+    left:125
+  },
+  signupButton: {
+    color: "black",
+    fontSize: 17,
+    textAlign:'center',
+    fontWeight:'bold',
+    fontWeight:'500'
+
+  },
+  //aqui termina Main
     socialNetworks:  {
       width:200,
       height:200,
