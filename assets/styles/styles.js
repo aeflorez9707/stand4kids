@@ -257,6 +257,16 @@ btnLogin: {
       paddingLeft:10
 
     },
+    titulo: {
+      fontFamily: 'Product-Sans-Regular',
+      color: "#000000",
+      fontWeight: '500',
+      marginVertical: 15,
+      fontSize: 20,
+      textAlign:'center',
+      paddingLeft:10
+
+    },
     btnPediatria: {
       width: 280,
       height: 80,

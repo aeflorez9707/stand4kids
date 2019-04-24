@@ -24,23 +24,7 @@ export default class Signin extends React.Component {
   }
 
   componentWillMount() {
-    //
-    // check login user this is for the sample data only since i dont have backend api. ignore this function
-    //
-    AsyncStorage.getItem('userData', (err, userData) => {
-      if(userData === null || userData === undefined || userData === '') {
-        this.setState({
-          matchEmail: '',
-          matchPassword: ''
-        });
-      }else{
-        var data = JSON.parse(userData);
-        this.setState({
-          matchEmail: data.yourEmail,
-          matchPassword: data.yourPassword
-        });
-      }
-    });
+
   }
 
   render() {

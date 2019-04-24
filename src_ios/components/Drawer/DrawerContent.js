@@ -3,6 +3,7 @@ import { View, AsyncStorage, TouchableWithoutFeedback } from 'react-native';
 import { Content, Text, ListItem, List, Left, Body, Right, Thumbnail, Button } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import styles from '../../../assets/styles/styles';
+import newUser from '../../../assets/icons/new-user.png';
 import { AntDesign } from '@expo/vector-icons';
 import {Entypo} from '@expo/vector-icons';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
@@ -51,7 +52,7 @@ export default class DrawerContent extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.drawerContainer}>
         <View style={styles.drawerTopContent}>
 
             <TouchableWithoutFeedback onPress={() => this.updateAvatar()}>
@@ -68,66 +69,65 @@ export default class DrawerContent extends React.Component {
         <View style={styles.drawerListContent}>
             <Content>
                 <List>
-                <ListItem icon onPress={() => Actions.feeds()}>
-                    <Left>
-                        <AntDesign name="bars" size={20} />
-                    </Left>
-                    <Body>
-                        <Text style={styles.drawerTxtList}>Menú principal</Text>
-                    </Body>
-                    <Right />
-                </ListItem>
-                <ListItem icon onPress={() => Actions.desarrollo( Actions.midesarrollo())}>
-                    <Left>
-                        <MaterialCommunityIcons name="baby-buggy" size={20} />
-                    </Left>
-                    <Body>
-                        <Text style={styles.drawerTxtList}>Aprende de mi desarrollo</Text>
-                    </Body>
-                    <Right />
-                </ListItem>
-                <ListItem icon >
-                    <Left>
-                        <AntDesign name="areachart" size={20} />
-                    </Left>
-                    <Body>
-                        <Text style={styles.drawerTxtList}>Seguimiento</Text>
-                    </Body>
-                    <Right />
-                </ListItem>
-                <ListItem icon onPress={() => Actions.network()}>
-                    <Left>
-                        <Entypo name="network" size={20} />
-                    </Left>
-                    <Body>
-                        <Text style={styles.drawerTxtList}>Red de apoyo</Text>
-                    </Body>
-                    <Right />
-                </ListItem>
-                <ListItem icon onPress={() => Actions.about()}>
-                    <Left>
-                        <AntDesign name="infocirlceo" size={20} />
-                    </Left>
-                    <Body>
-                        <Text style={styles.drawerTxtList}>Quiénes somos</Text>
-                    </Body>
-                    <Right />
-                </ListItem>
-                <ListItem icon onPress={() => this.logout()}>
-                    <Left>
-                        <AntDesign name="poweroff" size={20} />
-                    </Left>
-                    <Body>
-                        <Text style={styles.drawerTxtList}>Cerrar sesión</Text>
-                    </Body>
-                    <Right />
-                </ListItem>
+                    <ListItem icon onPress={() => Actions.feeds()}>
+                        <Left>
+                            <AntDesign name="bars" size={20} />
+                        </Left>
+                        <Body>
+                            <Text style={styles.drawerTxtList}>Menú principal</Text>
+                        </Body>
+                        <Right />
+                    </ListItem>
+                    <ListItem icon onPress={() => Actions.desarrollo( Actions.midesarrollo())}>
+                        <Left>
+                            <MaterialCommunityIcons name="baby-buggy" size={20} />
+                        </Left>
+                        <Body>
+                            <Text style={styles.drawerTxtList}>Aprende de mi desarrollo</Text>
+                        </Body>
+                        <Right />
+                    </ListItem>
+                    <ListItem icon >
+                        <Left>
+                            <AntDesign name="areachart" size={20} />
+                        </Left>
+                        <Body>
+                            <Text style={styles.drawerTxtList}>Seguimiento</Text>
+                        </Body>
+                        <Right />
+                    </ListItem>
+                    <ListItem icon onPress={() => Actions.network()}>
+                        <Left>
+                            <Entypo name="network" size={20} />
+                        </Left>
+                        <Body>
+                            <Text style={styles.drawerTxtList}>Red de apoyo</Text>
+                        </Body>
+                        <Right />
+                    </ListItem>
+                    <ListItem icon onPress={() => Actions.about()}>
+                        <Left>
+                            <AntDesign name="infocirlceo" size={20} />
+                        </Left>
+                        <Body>
+                            <Text style={styles.drawerTxtList}>Quiénes somos</Text>
+                        </Body>
+                        <Right />
+                    </ListItem>
+                    <ListItem icon onPress={() => this.logout()}>
+                        <Left>
+                            <AntDesign name="poweroff" size={20} />
+                        </Left>
+                        <Body>
+                            <Text style={styles.drawerTxtList}>Cerrar sesión</Text>
+                        </Body>
+                        <Right />
+                    </ListItem>
                 </List>
             </Content>
         </View>
-        </View>
+      </View>
     );
-
   }
 
   updateAvatar() {

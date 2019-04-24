@@ -1,16 +1,35 @@
 import React from 'react';
-import { View, StatusBar, AsyncStorage, Image,TextInput } from 'react-native';
+import { View, StatusBar, AsyncStorage, Image,TextInput,TouchableOpacity,Alert } from 'react-native';
 import { Text, Button } from 'native-base';
-import Icon from 'react-native-vector-icons/Ionicons'
+import { Ionicons } from '@expo/vector-icons';
 import { Actions } from 'react-native-router-flux';
 import styles from '../../../assets/styles/styles';
-import logo from '../../../assets/images/mati.png';
+import logo from '../../../assets/images/oso.png';
 export default class Main extends React.Component {
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
+    this.state = {
+      showPass:true,
+      press: false,
+      yourEmail: '',
+      yourPassword: '',
+      btnDisable: false,
 
-    this.state = {}
+      //
+      // ignore this state
+      //
+      matchEmail: '',
+      matchPassword: ''
+    }
+  }
+  showPass= ()=>{
+    if (this.state.press==false){
+      this.setState({showPass:false,press:true})
+    }else{
+      this.setState({showPass:true,press:false})
+
+    }
   }
 
   componentWillMount() {
@@ -24,25 +43,104 @@ export default class Main extends React.Component {
         Actions.drawer({type: 'reset'});
       }
     });
+
+    //
+    // check login user this is for the sample data only since i dont have backend api. ignore this function
+    //
+    AsyncStorage.getItem('userData', (err, userData) => {
+      if(userData === null || userData === undefined || userData === '') {
+        this.setState({
+          matchEmail: '',
+          matchPassword: ''
+        });
+      }else{
+        var data = JSON.parse(userData);
+        this.setState({
+          matchEmail: data.yourEmail,
+          matchPassword: data.yourPassword
+        });
+      }
+    });
   }
+
 
   render() {
     return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content"/>
-        <View style={styles.mainWrapper}>
-         <Image source={logo} style={styles.logo} />
+        <View style={styles.containerBear}>
+        <Image source={logo} style={styles.logoBear} />
+         <Text style={styles.logoBearText}>Mati beta</Text>
         </View>
+        <TextInput
+        style={styles.inputUser}
+        placeholder={'e-mail'}
+        onChangeText={(txt) => this.setState({yourEmail: txt})}
+        value={this.state.yourEmail}
+        placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+        underLineColorAndroid='transparent'
+        keyboardType="email-address"
+        />
+    <Ionicons name={'ios-person'} size={28} color="white" style={styles.inputIconLogin}/>
+      <TextInput
+      style={styles.inputPass}
+      placeholder={'Contraseña'}
+      onChangeText={(txt) => this.setState({yourPassword: txt})}
+      value={this.state.yourPassword}
+      secureTextEntry={this.state.showPass}
+      placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+      underLineColorAndroid='transparent'
+      />
+      <Ionicons name={'ios-lock'} size={28} color="white" style={styles.passIcon}/>
+      <TouchableOpacity style={styles.eyeIcon}
+        onPress={this.showPass.bind(this)}>
+        <Ionicons name={this.state.press==false ? 'ios-eye' : 'ios-eye-off'} size={26} color="white" />
+      </TouchableOpacity>
+      <TouchableOpacity full onPress={() => this.login()} style={styles.btnLogin}>
+        <Text style={styles.textLog}>Iniciar sesión</Text>
+      </TouchableOpacity>
+      <View style={styles.containerSignupTextCont}>
+       <Text>¿Aún no tienes cuenta?</Text>
+       <TouchableOpacity full onPress={() => this.signUp()} ><Text style={styles.signupButton}> Regístrate</Text>
+       </TouchableOpacity>
+       </View>
 
-        <Button style={styles.btnPrimary} full onPress={() => this.signUp()}>
-          <Text uppercase={false} style={styles.btnTxt}>¿Aún no tienes cuenta? Regístrate</Text>
-        </Button>
-        <Button style={styles.btnSecondary} full onPress={() => this.signIn()}>
-          <Text uppercase={false} style={styles.btnTxt}>¿Ya tienes una cuenta? Inicia sesión</Text>
-        </Button>
       </View>
     );
   }
+
+  login() {
+    this.setState({btnDisable: true});
+
+    if(this.state.yourEmail === '') {
+      this.setState({btnDisable: false});
+      Alert.alert('Error', 'Correo electrónico requerido');
+      return false;
+    }
+
+    if(this.state.yourPassword === '') {
+      this.setState({btnDisable: false});
+      Alert.alert('Error', 'La contraseña es requerida');
+      return false;
+    }
+
+    //
+    // Add your backend api here
+    //
+
+    //
+    // sample error message when api backend deny your request
+    //
+    if(this.state.matchEmail === '' && this.state.matchPassword === '') {
+      this.setState({btnDisable: false});
+      Alert.alert('Acceso denegado', 'Correo electrónico o contraseña requeridos');
+      return false;
+    }
+
+    AsyncStorage.setItem('userLoggedIn', 'YES');
+    Actions.drawer({type: 'reset'});
+  }
+
 
   signIn() {
     Actions.signin();
