@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
       paddingLeft:34
     },
 
+
     logoBear:  {
 
       width:180,
@@ -62,6 +63,14 @@ const styles = StyleSheet.create({
       alignItems: 'center'
     },
 
+    //Singup
+    logoSignup:  {
+    marginTop:8,
+    width:80,
+    height:80,
+    marginTop:30
+  },
+
   inputUser:  {
   width: 300,
   height: 45,
@@ -71,8 +80,20 @@ const styles = StyleSheet.create({
   backgroundColor:"black",
   color:'rgba(255, 255, 255, 0.7)',
   marginHorizontal:25,
-  marginVertical:10
+  marginTop:-80
   /**'rgba(0, 0, 0, 0.35)',*/
+},
+inputMail:  {
+width: 300,
+height: 45,
+borderRadius: 25,
+fontSize: 16,
+paddingLeft:45,
+backgroundColor:"black",
+color:'rgba(255, 255, 255, 0.7)',
+marginHorizontal:25,
+marginTop:-50
+/**'rgba(0, 0, 0, 0.35)',*/
 },
 inputPass:  {
 width: 300,
@@ -83,9 +104,22 @@ paddingLeft:45,
 backgroundColor:"black",
 color:'rgba(255, 255, 255, 0.7)',
 marginHorizontal:25,
-marginTop:-8,
+marginTop:-20
 /**'rgba(0, 0, 0, 0.35)',*/
 },
+confirmPass:  {
+width: 300,
+height: 45,
+borderRadius: 25,
+fontSize: 16,
+paddingLeft:45,
+backgroundColor:"black",
+color:'rgba(255, 255, 255, 0.7)',
+marginHorizontal:25,
+marginTop:-30
+/**'rgba(0, 0, 0, 0.35)',*/
+},
+
 btnLogin: {
     width: 300,
     height: 45,
@@ -96,12 +130,26 @@ btnLogin: {
     marginTop:-20
 
   },
-  inputIcon:{
-    top:-50,
+  btnRegistrarse: {
+      width: 300,
+      height: 45,
+      borderRadius: 25,
+      backgroundColor:'#fb8c00' ,
+      justifyContent:'center' ,
+      textAlign:'center' ,
+      marginTop:10
+
+    },
+  inputIconLogin:{
+    top:-80,
     left:-125
   },
   passIcon:{
     top:-40,
+    left:-125
+  },
+  mailIcon:{
+    top:-38,
     left:-125
   },
   eyeIcon:{
@@ -121,10 +169,16 @@ btnLogin: {
       width:200,
       height:200,
       paddingLeft:45,
-      backgroundColor: '#fff',
       marginHorizontal:25,
-      alignItems: 'center'
+      alignItems: 'center',
+      backgroundColor: '#fff'
     },
+    picker:  {
+  width: 300,
+  height: 45,
+  marginHorizontal:25,
+  marginTop:-30
+},
     mainLogo: {
         fontFamily: 'Product-Sans-Regular',
         fontSize: 40,

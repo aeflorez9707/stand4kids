@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StatusBar, AsyncStorage, Image,TextInput,TouchableOpacity } from 'react-native';
+import { View, StatusBar, AsyncStorage, Image,TextInput,TouchableOpacity,Alert } from 'react-native';
 import { Text, Button } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
 import { Actions } from 'react-native-router-flux';
@@ -11,7 +11,16 @@ export default class Main extends React.Component {
     super()
     this.state = {
       showPass:true,
-      press: false
+      press: false,
+      yourEmail: '',
+      yourPassword: '',
+      btnDisable: false,
+
+      //
+      // ignore this state
+      //
+      matchEmail: '',
+      matchPassword: ''
     }
   }
   showPass= ()=>{
@@ -34,7 +43,26 @@ export default class Main extends React.Component {
         Actions.drawer({type: 'reset'});
       }
     });
+
+    //
+    // check login user this is for the sample data only since i dont have backend api. ignore this function
+    //
+    AsyncStorage.getItem('userData', (err, userData) => {
+      if(userData === null || userData === undefined || userData === '') {
+        this.setState({
+          matchEmail: '',
+          matchPassword: ''
+        });
+      }else{
+        var data = JSON.parse(userData);
+        this.setState({
+          matchEmail: data.yourEmail,
+          matchPassword: data.yourPassword
+        });
+      }
+    });
   }
+
 
   render() {
     return (
@@ -46,15 +74,19 @@ export default class Main extends React.Component {
         </View>
         <TextInput
         style={styles.inputUser}
-        placeholder={'Usuario'}
+        placeholder={'e-mail'}
+        onChangeText={(txt) => this.setState({yourEmail: txt})}
+        value={this.state.yourEmail}
         placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
         underLineColorAndroid='transparent'
         keyboardType="email-address"
         />
-    <Ionicons name={'ios-person'} size={28} color="white" style={styles.inputIcon}/>
+    <Ionicons name={'ios-person'} size={28} color="white" style={styles.inputIconLogin}/>
       <TextInput
       style={styles.inputPass}
       placeholder={'Contraseña'}
+      onChangeText={(txt) => this.setState({yourPassword: txt})}
+      value={this.state.yourPassword}
       secureTextEntry={this.state.showPass}
       placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
       underLineColorAndroid='transparent'
@@ -64,17 +96,49 @@ export default class Main extends React.Component {
         onPress={this.showPass.bind(this)}>
         <Ionicons name={this.state.press==false ? 'ios-eye' : 'ios-eye-off'} size={26} color="white" />
       </TouchableOpacity>
-      <TouchableOpacity  style={styles.btnLogin}>
+      <TouchableOpacity full onPress={() => this.login()} style={styles.btnLogin}>
         <Text style={styles.textLog}>Iniciar sesión</Text>
       </TouchableOpacity>
       <View style={styles.containerSignupTextCont}>
        <Text>¿Aún no tienes cuenta?</Text>
-       <TouchableOpacity ><Text style={styles.signupButton}> Regístrate</Text>
+       <TouchableOpacity full onPress={() => this.signUp()} ><Text style={styles.signupButton}> Regístrate</Text>
        </TouchableOpacity>
        </View>
 
       </View>
     );
+  }
+
+  login() {
+    this.setState({btnDisable: true});
+
+    if(this.state.yourEmail === '') {
+      this.setState({btnDisable: false});
+      Alert.alert('Error', 'Correo electrónico requerido');
+      return false;
+    }
+
+    if(this.state.yourPassword === '') {
+      this.setState({btnDisable: false});
+      Alert.alert('Error', 'La contraseña es requerida');
+      return false;
+    }
+
+    //
+    // Add your backend api here
+    //
+
+    //
+    // sample error message when api backend deny your request
+    //
+    if(this.state.matchEmail === '' && this.state.matchPassword === '') {
+      this.setState({btnDisable: false});
+      Alert.alert('Acceso denegado', 'Correo electrónico o contraseña requeridos');
+      return false;
+    }
+
+    AsyncStorage.setItem('userLoggedIn', 'YES');
+    Actions.drawer({type: 'reset'});
   }
 
 
