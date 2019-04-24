@@ -8,6 +8,7 @@ import Signup from '../views/Signup/Signup';
 import Main from '../views/Main/Main';
 import Cerotres from '../views/Cerotres/Cerotres';
 import Integracion from '../views/Integracion/Integracion';
+import Sonrie from '../views/Sonrie/Sonrie';
 // Drawers
 import DrawerContent from '../components/Drawer/DrawerContent';
 import Feeds from '../views/Drawers/Feeds/Feeds';
@@ -35,6 +36,7 @@ const Routes = () => {
                     <Scene key="midesarrollo" title="Midesarrollo" component={Midesarrollo} hideNavBar/>
                     <Scene key="cerotres" title="Cerotres" component={Cerotres} hideNavBar/ >
                     <Scene key="integracion" title="Integracion" component={Integracion} hideNavBar/ >
+                    <Scene key="sonrie" title="Sonrie" component={Sonrie} hideNavBar/ >
                     </Scene>
 
                     <Scene key="network" title="Network" component={Network} hideNavBar/ >
