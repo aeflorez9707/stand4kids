@@ -8,7 +8,10 @@ import Signup from '../views/Signup/Signup';
 import Main from '../views/Main/Main';
 import Cerotres from '../views/Cerotres/Cerotres';
 import Integracion from '../views/Integracion/Integracion';
+import Motricidad from '../views/Motricidad/Motricidad';
 import Sonrie from '../views/Sonrie/Sonrie';
+import Veamos from '../views/Veamos/Veamos';
+import LevantarCabeza from '../views/LevantarCabeza/LevantarCabeza';
 // Drawers
 import DrawerContent from '../components/Drawer/DrawerContent';
 import Feeds from '../views/Drawers/Feeds/Feeds';
@@ -37,6 +40,9 @@ const Routes = () => {
                     <Scene key="cerotres" title="Cerotres" component={Cerotres} hideNavBar/ >
                     <Scene key="integracion" title="Integracion" component={Integracion} hideNavBar/ >
                     <Scene key="sonrie" title="Sonrie" component={Sonrie} hideNavBar/ >
+                    <Scene key="veamos" title="Veamos" component={Veamos} hideNavBar/ >
+                    <Scene key="motricidad" title="Motricidad" component={Motricidad} hideNavBar/ >
+                    <Scene key="levantarCabeza" title="Levantar" component={LevantarCabeza} hideNavBar/ >
                     </Scene>
 
                     <Scene key="network" title="Network" component={Network} hideNavBar/ >

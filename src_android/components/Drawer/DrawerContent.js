@@ -55,6 +55,7 @@ export default class DrawerContent extends React.Component {
       <View style={styles.drawerContainer}>
         <View style={styles.drawerTopContent}>
 
+
             <TouchableWithoutFeedback onPress={() => this.updateAvatar()}>
                 <Thumbnail
                     large
@@ -69,30 +70,22 @@ export default class DrawerContent extends React.Component {
         <View style={styles.drawerListContent}>
             <Content>
                 <List>
-                    <ListItem icon onPress={() => Actions.feeds()}>
-                        <Left>
-                            <AntDesign name="bars" size={20} />
-                        </Left>
-                        <Body>
-                            <Text style={styles.drawerTxtList}>Menú principal</Text>
-                        </Body>
-                        <Right />
-                    </ListItem>
+                <ListItem icon onPress={() => Actions.tabbar()}>
+                <Left>
+                    <AntDesign name="bars" size={20} />
+                </Left>
+                <Body>
+                    <Text style={styles.drawerTxtList}>Menú principal</Text>
+                </Body>
+                <Right />
+               </ListItem>
+
                     <ListItem icon onPress={() => Actions.desarrollo( Actions.midesarrollo())}>
                         <Left>
                             <MaterialCommunityIcons name="baby-buggy" size={20} />
                         </Left>
                         <Body>
                             <Text style={styles.drawerTxtList}>Aprende de mi desarrollo</Text>
-                        </Body>
-                        <Right />
-                    </ListItem>
-                    <ListItem icon >
-                        <Left>
-                            <AntDesign name="areachart" size={20} />
-                        </Left>
-                        <Body>
-                            <Text style={styles.drawerTxtList}>Seguimiento</Text>
                         </Body>
                         <Right />
                     </ListItem>

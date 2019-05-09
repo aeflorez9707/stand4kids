@@ -1,14 +1,17 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { Router, Scene, Drawer, ActionConst } from 'react-native-router-flux';
-
+import { Router, Scene, Drawer, ActionConst,Tabs, Stack } from 'react-native-router-flux';
+import { AntDesign } from '@expo/vector-icons';
 // Views
 import Signin from '../views/Signin/Signin';
 import Signup from '../views/Signup/Signup';
 import Main from '../views/Main/Main';
 import Cerotres from '../views/Cerotres/Cerotres';
 import Integracion from '../views/Integracion/Integracion';
+import Motricidad from '../views/Motricidad/Motricidad';
 import Sonrie from '../views/Sonrie/Sonrie';
+import Veamos from '../views/Veamos/Veamos';
+import LevantarCabeza from '../views/LevantarCabeza/LevantarCabeza';
 // Drawers
 import DrawerContent from '../components/Drawer/DrawerContent';
 import Feeds from '../views/Drawers/Feeds/Feeds';
@@ -16,6 +19,21 @@ import About from '../views/Drawers/About/About';
 import Midesarrollo from '../views/Drawers/Midesarrollo/Midesarrollo';
 import Network from '../views/Drawers/Network/Network';
 import Avatar from '../views/Drawers/Avatar/Avatar';
+// Tabs
+import Tab1 from '../views/Tabs/Tab1/Tab1'
+import Tab2 from '../views/Tabs/Tab2/Tab2';
+
+const Tabicon = ({focused, iconName, title}) => {
+
+    var color = focused ? '#ED4C67' : '#999';
+    return (
+        <View style={{width: 80, alignItems: 'center'}}>
+            <AntDesign size={25} name={iconName} color={color} />
+            <Text style={{color: color, fontSize: 8, fontFamily: 'OpenSans-Regular'}}>{title}</Text>
+        </View>
+    );
+  }
+
 
 const Routes = () => {
     return(
@@ -30,6 +48,36 @@ const Routes = () => {
                     contentComponent={DrawerContent}
                     type={ActionConst.RESET}
                     hideNavBar>
+                    <Tabs
+                        key="tabbar"
+                        legacy={true}
+                        swipeEnabled={true}
+                        tabBarPosition={'bottom'}
+                        showLabel={false}
+                        lazy={true}
+                        animationEnabled={true}
+                        hideNavBar>
+
+                        <Stack
+                            key="tab1"
+                            title="Tab1"
+                            icon={Tabicon}
+                            iconName="bars"
+                            hideNavBar>
+
+                            <Scene key="tab1" title="Tab1" component={Feeds} hideNavBar />
+                        </Stack>
+
+                        <Stack
+                            key="tab2"
+                            title="Tab2"
+                            icon={Tabicon}
+                            iconName="infocirlceo"
+                            hideNavBar>
+
+                            <Scene key="tab2" title="Tab2" component={Tab2} hideNavBar />
+                        </Stack>
+                    </Tabs>
 
                     <Scene key="feeds" title="Feeds" component={Feeds} hideNavBar />
                     <Scene key="desarrollo" title="desarrollo" hideNavBar>
@@ -37,6 +85,9 @@ const Routes = () => {
                     <Scene key="cerotres" title="Cerotres" component={Cerotres} hideNavBar/ >
                     <Scene key="integracion" title="Integracion" component={Integracion} hideNavBar/ >
                     <Scene key="sonrie" title="Sonrie" component={Sonrie} hideNavBar/ >
+                    <Scene key="veamos" title="Veamos" component={Veamos} hideNavBar/ >
+                    <Scene key="motricidad" title="Motricidad" component={Motricidad} hideNavBar/ >
+                    <Scene key="levantarCabeza" title="Levantar" component={LevantarCabeza} hideNavBar/ >
                     </Scene>
 
                     <Scene key="network" title="Network" component={Network} hideNavBar/ >

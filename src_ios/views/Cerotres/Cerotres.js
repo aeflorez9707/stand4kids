@@ -14,7 +14,7 @@ export default class Cerotres extends React.Component {
         <TouchableOpacity  onPress={() => Actions.desarrollo( Actions.integracion())} style={styles.btn03}>
           <Text style={styles.textLog}>Integración sensorial</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn36}>
+        <TouchableOpacity onPress={() => Actions.desarrollo( Actions.motricidad())} style={styles.btn36}>
           <Text style={styles.textLog}>Motricidad</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn69}>

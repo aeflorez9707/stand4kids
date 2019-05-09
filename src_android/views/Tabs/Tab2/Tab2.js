@@ -1,0 +1,27 @@
+import React from 'react';
+import { View } from 'react-native';
+import { Text, Content } from 'native-base';
+import styles from '../../../../assets/styles/styles';
+import HeaderDefault from '../../../components/Header/HeaderBack';
+
+export default class Tab2 extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {}
+  }
+
+  render() {
+    return (
+      <View style={styles.drawerContainer}>
+        <HeaderDefault title="Tab2"/>
+        <Content padder>
+          <Text style={styles.descTxt}>
+            ESTO ES UNA PRUEBA DE QUE DANIEL CHUPA ESTE PENCO
+          </Text>
+        </Content>
+      </View>
+    );
+  }
+}

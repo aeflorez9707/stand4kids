@@ -11,13 +11,13 @@ export default class Integracion extends React.Component {
       <View style={styles.drawerContainer}>
       <HeaderDefault style={styles.textLog} title="Integración sensorial"/>
       <Content padder style={styles.container}>
-        <TouchableOpacity  style={styles.btn03}>
-          <Text style={styles.textLog}>Sonrie conmigo</Text>
+        <TouchableOpacity onPress={() => Actions.desarrollo( Actions.sonrie())} style={styles.btn03}>
+          <Text style={styles.textLog} >Sonrie conmigo</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn36}>
           <Text style={styles.textLog}>Escuchemos nuevos sonidos</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn69}>
+        <TouchableOpacity onPress={() => Actions.desarrollo( Actions.veamos())} style={styles.btn69}>
           <Text style={styles.textLog}>Veamos nuevos objetos</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn912}>
