@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, ActivityIndicator, Image } from 'react-native';
-import { Text, Content, Card, CardItem, Thumbnail, Left, Body, Right } from 'native-base';
+import { View, ActivityIndicator, Image,TouchableOpacity } from 'react-native';
+import { Text, Content, Card, CardItem, Thumbnail, Left, Body, Right,Button,Icon } from 'native-base';
 import styles from '../../../../assets/styles/styles';
+import { Actions } from 'react-native-router-flux';
 import HeaderDefault from '../../../components/Header/HeaderDefault';
 import axios from 'axios';
 
@@ -16,62 +17,125 @@ export default class Feeds extends React.Component {
     }
   }
 
-  componentWillMount() {
-    //
-    // sample fetch api from sub reddit
-    //
-    var url = 'https://www.reddit.com/r/EarthPorn.json';
-    axios.get(url).then(res => {
-      this.setState({data: res.data.data.children, loading: false});
-    });
-  }
+
 
   render() {
     return (
       <View style={styles.drawerContainer}>
         <HeaderDefault title="Menú principal"/>
-        {this.renderFeeds()}
+        <Content padder>
+
+
+        <TouchableOpacity onPress={() => Actions.desarrollo( Actions.midesarrollo())}>
+        <Card>
+          <CardItem>
+            <Left>
+              <Thumbnail source={require('../../../../assets/images/babySee.png')} />
+              <Body>
+                <Text>Actividades</Text>
+                <Text note>0-3 meses</Text>
+              </Body>
+            </Left>
+          </CardItem>
+          <CardItem cardBody>
+            <Image source={require('../../../../assets/images/activity.jpeg')}
+            style={{height: 200, width: null, flex: 1}}/>
+          </CardItem>
+          <CardItem>
+            <Left>
+              <Button transparent>
+                <Icon active name="thumbs-up" />
+                <Text>12 Likes</Text>
+              </Button>
+            </Left>
+            <Body>
+              <Button transparent>
+                <Icon active name="chatbubbles" />
+                <Text>4 Comments</Text>
+              </Button>
+            </Body>
+            <Right>
+              <Text>11h ago</Text>
+            </Right>
+          </CardItem>
+        </Card>
+        </TouchableOpacity>
+
+
+       <TouchableOpacity onPress={() => Actions.desarrollo( Actions.midesarrollo())}>
+       <Card>
+         <CardItem>
+           <Left>
+             <Thumbnail source={require('../../../../assets/images/babySee.png')} />
+             <Body>
+               <Text>Seguimiento</Text>
+               <Text note></Text>
+             </Body>
+           </Left>
+         </CardItem>
+         <CardItem cardBody>
+           <Image source={require('../../../../assets/images/activity.jpeg')}
+           style={{height: 200, width: null, flex: 1}}/>
+         </CardItem>
+         <CardItem>
+           <Left>
+             <Button transparent>
+               <Icon active name="thumbs-up" />
+               <Text>12 Likes</Text>
+             </Button>
+           </Left>
+           <Body>
+             <Button transparent>
+               <Icon active name="chatbubbles" />
+               <Text>4 Comments</Text>
+             </Button>
+           </Body>
+           <Right>
+             <Text>11h ago</Text>
+           </Right>
+         </CardItem>
+       </Card>
+       </TouchableOpacity>
+
+       <TouchableOpacity onPress={() => Actions.desarrollo( Actions.midesarrollo())}>
+       <Card>
+         <CardItem>
+           <Left>
+             <Thumbnail source={require('../../../../assets/images/babySee.png')} />
+             <Body>
+               <Text>Por decidir</Text>
+               <Text note></Text>
+             </Body>
+           </Left>
+         </CardItem>
+         <CardItem cardBody>
+           <Image source={require('../../../../assets/images/activity.jpeg')}
+           style={{height: 200, width: null, flex: 1}}/>
+         </CardItem>
+         <CardItem>
+           <Left>
+             <Button transparent>
+               <Icon active name="thumbs-up" />
+               <Text>12 Likes</Text>
+             </Button>
+           </Left>
+           <Body>
+             <Button transparent>
+               <Icon active name="chatbubbles" />
+               <Text>4 Comments</Text>
+             </Button>
+           </Body>
+           <Right>
+             <Text>11h ago</Text>
+           </Right>
+         </CardItem>
+       </Card>
+       </TouchableOpacity>
+
+        </Content>
+
       </View>
     );
   }
 
-  renderFeeds() {
-    if(this.state.loading === true) {
-      return(
-        <View style={styles.separatorWrapper}>
-          <ActivityIndicator />
-        </View>
-      )
-    }else{
-      if(this.state.data.length === 0) {
-        return(
-          <View style={styles.separatorWrapper}>
-            <Text style={styles.subTitleTxt}>No Data</Text>
-          </View>
-        )
-      }else{
-        return(
-          <Content padder>
-            {this.state.data.map((item, i) => {
-              return(
-                <Card key={i}>
-                  <CardItem>
-                    <Left>
-                      <Thumbnail source={{uri: item.data.thumbnail}} />
-                      <Body>
-                        <Text style={styles.titleTxt}>{item.data.author}</Text>
-                      </Body>
-                    </Left>
-                  </CardItem>
-                  <CardItem cardBody>
-                    <Image source={{uri: item.data.url}} style={{height: 300, width: '100%'}}/>
-                  </CardItem>
-                </Card>
-              )
-            })}
-          </Content>
-        )
-      }
-    }
   }
-}
