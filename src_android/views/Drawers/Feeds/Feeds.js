@@ -33,13 +33,13 @@ export default class Feeds extends React.Component {
 
         <SafeAreaView style={{ flex: 1 }}>
                  <View style={{ flex: 1 }}>
-                     
+
                      <ScrollView
                          scrollEventThrottle={16}
                      >
                          <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
                              <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
-                                 What can we help you find, Varun?
+                                 Contacta a:
                              </Text>
 
                              <View style={{ height: 130, marginTop: 20 }}>
@@ -47,29 +47,31 @@ export default class Feeds extends React.Component {
                                      horizontal={true}
                                      showsHorizontalScrollIndicator={false}
                                  >
-                                     <Category imageUri={require('../../../../assets/images/activity.jpeg')}
-                                         name="Home"
+                                     <Category imageUri={require('../../../../assets/images/doctor.jpg')}
+                                         name="Profesionales"
                                      />
-                                     <Category imageUri={require('../../../../assets/images/activity.jpeg')}
-                                         name="Experiences"
+                                     <Category imageUri={require('../../../../assets/images/cerotres.png')}
+                                         name="Fundaciones"
                                      />
-                                     <Category imageUri={require('../../../../assets/images/activity.jpeg')}
-                                         name="Resturant"
+                                     <Category imageUri={require('../../../../assets/images/family.jpeg')}
+                                         name="Otros padres"
                                      />
                                  </ScrollView>
                              </View>
                              <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
                                  <Text style={{ fontSize: 24, fontWeight: '700' }}>
-                                     Introducing Airbnb Plus
+                                     Super oferta:
                                  </Text>
                                  <Text style={{ fontWeight: '100', marginTop: 10 }}>
-                                     A new selection of homes verified for quality & comfort
+                                     Por registar el progreso en actividades de tu bebé tienes la
+                                     posibilidad de obtener:
+
 
                                  </Text>
                                  <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
                                      <Image
                                          style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }}
-                                         source={require('../../../../assets/images/activity.jpeg')}
+                                         source={require('../../../../assets/images/freeDiapers.png')}
                                      />
 
                                  </View>

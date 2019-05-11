@@ -3,9 +3,9 @@ import { View, AsyncStorage, TouchableWithoutFeedback } from 'react-native';
 import { Content, Text, ListItem, List, Left, Body, Right, Thumbnail, Button } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import styles from '../../../assets/styles/styles';
-import newUser from '../../../assets/icons/new-user.png';
 import { AntDesign } from '@expo/vector-icons';
 import {Entypo} from '@expo/vector-icons';
+import {Octicons} from '@expo/vector-icons';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 export default class DrawerContent extends React.Component {
 
@@ -80,30 +80,21 @@ export default class DrawerContent extends React.Component {
                 <Right />
                </ListItem>
 
-                    <ListItem icon onPress={() => Actions.desarrollo( Actions.midesarrollo())}>
-                        <Left>
-                            <MaterialCommunityIcons name="baby-buggy" size={20} />
-                        </Left>
-                        <Body>
-                            <Text style={styles.drawerTxtList}>Aprende de mi desarrollo</Text>
-                        </Body>
-                        <Right />
-                    </ListItem>
-                    <ListItem icon onPress={() => Actions.network()}>
-                        <Left>
-                            <Entypo name="network" size={20} />
-                        </Left>
-                        <Body>
-                            <Text style={styles.drawerTxtList}>Red de apoyo</Text>
-                        </Body>
-                        <Right />
-                    </ListItem>
                     <ListItem icon onPress={() => Actions.about()}>
                         <Left>
                             <AntDesign name="infocirlceo" size={20} />
                         </Left>
                         <Body>
                             <Text style={styles.drawerTxtList}>Quiénes somos</Text>
+                        </Body>
+                        <Right />
+                    </ListItem>
+                    <ListItem icon >
+                        <Left>
+                            <Octicons name="gear" size={20} />
+                        </Left>
+                        <Body>
+                            <Text style={styles.drawerTxtList}>Configuración</Text>
                         </Body>
                         <Right />
                     </ListItem>

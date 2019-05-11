@@ -22,6 +22,7 @@ import Avatar from '../views/Drawers/Avatar/Avatar';
 // Tabs
 import Tab1 from '../views/Tabs/Tab1/Tab1'
 import Tab2 from '../views/Tabs/Tab2/Tab2';
+import Tab3 from '../views/Tabs/Tab3/Tab3';
 
 const Tabicon = ({focused, iconName, title}) => {
 
@@ -76,6 +77,15 @@ const Routes = () => {
                             hideNavBar>
 
                             <Scene key="tab2" title="Tab2" component={Tab2} hideNavBar />
+                        </Stack>
+                        <Stack
+                            key="tab3"
+                            title="Tab3"
+                            icon={Tabicon}
+                            iconName="infocirlceo"
+                            hideNavBar>
+
+                            <Scene key="tab3" title="Tab3" component={Tab3} hideNavBar />
                         </Stack>
                     </Tabs>
 

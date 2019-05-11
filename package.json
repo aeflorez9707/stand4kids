@@ -12,11 +12,13 @@
     "@expo/vector-icons": "^8.0.0",
     "axios": "^0.18.0",
     "expo": "^31.0.2",
+    "firebase": "^6.0.2",
     "moment": "^2.22.2",
     "native-base": "^2.8.1",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-native-card-media": "^0.1.2",
+    "react-native-firebase": "^5.3.1",
     "react-native-picker-dropdown": "^0.1.2",
     "react-native-router-flux": "^4.0.6"
   },
