@@ -138,14 +138,15 @@ export default class Main extends React.Component {
     //
     if(this.state.matchEmail === '' && this.state.matchPassword === '') {
       this.setState({btnDisable: false});
-      Alert.alert('Acceso denegado', 'Correo electrónico o contraseña requeridos');
+      Alert.alert('Acceso denegado', 'Correo electrónico o contraseña incorrectos');
       return false;
     }
     firebase.auth().signInWithEmailAndPassword(this.state.yourEmail, this.state.yourPassword)
-.then(() => { }, (error) => { Alert.alert(error.message); });
+ .then(() => {AsyncStorage.setItem('userLoggedIn', 'YES'); Actions.drawer({type: 'reset'});
+  }, (error) => { Alert.alert(error.message); return false; });
 
-    AsyncStorage.setItem('userLoggedIn', 'YES');
-    Actions.drawer({type: 'reset'});
+
+
   }
 
 
