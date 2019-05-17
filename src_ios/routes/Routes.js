@@ -61,9 +61,9 @@ const Routes = () => {
 
                         <Stack
                             key="tab1"
-                            title="Tab1"
+                            title="Inicio"
                             icon={Tabicon}
-                            iconName="bars"
+                            iconName="home"
                             hideNavBar>
 
                             <Scene key="tab1" title="Tab1" component={Feeds} hideNavBar />
@@ -71,18 +71,18 @@ const Routes = () => {
 
                         <Stack
                             key="tab2"
-                            title="Tab2"
+                            title="Actividades"
                             icon={Tabicon}
-                            iconName="infocirlceo"
+                            iconName="form"
                             hideNavBar>
 
                             <Scene key="tab2" title="Tab2" component={Tab2} hideNavBar />
                         </Stack>
                         <Stack
                             key="tab3"
-                            title="Tab3"
+                            title="Pefil"
                             icon={Tabicon}
-                            iconName="infocirlceo"
+                            iconName="user"
                             hideNavBar>
 
                             <Scene key="tab3" title="Tab3" component={Tab3} hideNavBar />

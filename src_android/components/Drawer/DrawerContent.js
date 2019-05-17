@@ -13,7 +13,7 @@ export default class DrawerContent extends React.Component {
     super(props)
 
     this.state = {
-        avatar: 'https://facebook.github.io/react-native/docs/assets/favicon.png',
+        avatar: 'https://image.flaticon.com/icons/png/128/748/748137.png',
         yourFullName: ''
     }
   }

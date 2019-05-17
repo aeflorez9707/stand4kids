@@ -4,11 +4,12 @@ import { Text, Button } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
 import { Actions } from 'react-native-router-flux';
 import styles from '../../../assets/styles/styles';
+import * as firebase from 'firebase';
 import logo from '../../../assets/images/oso.png';
 export default class Main extends React.Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       showPass:true,
       press: false,
@@ -22,7 +23,11 @@ export default class Main extends React.Component {
       matchEmail: '',
       matchPassword: ''
     }
+
+
   }
+
+
   showPass= ()=>{
     if (this.state.press==false){
       this.setState({showPass:false,press:true})
@@ -136,6 +141,8 @@ export default class Main extends React.Component {
       Alert.alert('Acceso denegado', 'Correo electrónico o contraseña requeridos');
       return false;
     }
+    firebase.auth().signInWithEmailAndPassword(this.state.yourEmail, this.state.yourPassword)
+.then(() => { }, (error) => { Alert.alert(error.message); });
 
     AsyncStorage.setItem('userLoggedIn', 'YES');
     Actions.drawer({type: 'reset'});
