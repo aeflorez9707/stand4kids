@@ -14,6 +14,9 @@ import Veamos from '../views/Veamos/Veamos';
 import LevantarCabeza from '../views/LevantarCabeza/LevantarCabeza';
 import Profesionales from '../views/Profesionales/Profesionales';
 import Fundaciones from '../views/Fundaciones/Fundaciones';
+import Levantamiento from '../views/Levantamiento/Levantamiento';
+import Generacion from '../views/Generacion/Generacion';
+import DesarrolloV from '../views/DesarrolloV/DesarrolloV';
 // Drawers
 import DrawerContent from '../components/Drawer/DrawerContent';
 import Feeds from '../views/Drawers/Feeds/Feeds';
@@ -111,6 +114,9 @@ const Routes = () => {
                 <Scene key="avatar" title="Avatar" component={Avatar} hideNavBar />
                 <Scene key="profesionales" title="Profesionales" component={Profesionales} hideNavBar />
                 <Scene key="fundaciones" title="Fundaciones" component={Fundaciones} hideNavBar />
+                <Scene key="levantamiento" title="Levantamiento" component={Levantamiento} hideNavBar />
+                <Scene key="generacion" title="Generacion" component={Generacion} hideNavBar />
+                <Scene key="desarrollov" title="DesarrolloV" component={DesarrolloV} hideNavBar />
 
             </Scene>
         </Router>

@@ -18,8 +18,8 @@ export default class App extends React.Component {
             <BadgeSupport
               title="Fundación Cero a Tres"
               direccion="Carrera 20 No. 106A-80"
-              telefono="Tel: 2133678"  
-              website="https://ceroatres.org/"              
+              telefono="Tel: 2133678"
+              website="https://ceroatres.org/"
               source_image = {require('./assets/cero-a-tres.png')}
               backgroundcolor="grey"
               bordercolor="grey"
@@ -27,8 +27,8 @@ export default class App extends React.Component {
             <BadgeSupport
               title="Asociación Aconiño"
               direccion="Calle 127B No. 45-28 "
-              telefono="Tel: 6508473"  
-              website="http://www.aconino.org/"              
+              telefono="Tel: 6508473"
+              website="http://www.aconino.org/"
               source_image = {require('./assets/aconiño.png')}
               backgroundcolor="grey"
               bordercolor="grey"
@@ -36,17 +36,17 @@ export default class App extends React.Component {
             <BadgeSupport
               title="Fundación niñez y desarrollo"
               direccion="Carera 3 No 19-71"
-              telefono="Tel: 3108259"  
-              website="http://www.fndcolombia.org/"              
-              source_image = {require('./assets/FND.jpg')}
+              telefono="Tel: 3108259"
+              website="http://www.fndcolombia.org/"
+              source_image = {require('./assets/FND.jpeg')}
               backgroundcolor="grey"
               bordercolor="grey"
             />
             <BadgeSupport
               title="Clínica de la mujer"
               direccion="Cra 19C No. 91-17"
-              telefono="Tel: 616-1799"  
-              website="https://www.clinicadelamujer.com.co/"              
+              telefono="Tel: 616-1799"
+              website="https://www.clinicadelamujer.com.co/"
               source_image = {require('./assets/clinicademujer.jpeg')}
               backgroundcolor="grey"
               bordercolor="grey"

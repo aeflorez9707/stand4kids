@@ -349,7 +349,7 @@ const styles = StyleSheet.create({
   //
   drawerTopContent: {
     flex: 1,
-    backgroundColor: '#b6ffff',
+    backgroundColor: '#5d99c6',
     alignItems: 'center',
     justifyContent: 'center'
   },

@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView,TouchableOpacity
 } from 'react-native';
-
+import { Actions } from 'react-native-router-flux';
 import styles from '../../../../assets/styles/styles';
 import HeaderDefault from '../../../components/Header/HeaderBack';
 import BadgeActivity from './components/badgeActivity';
@@ -34,7 +34,7 @@ export default class Tab2 extends React.Component {
               flexWrap: 'wrap',
               justifyContent: 'space-between',
             }}>
-               <TouchableOpacity >
+            <TouchableOpacity onPress={() => Actions.levantamiento()}>
             <BadgeActivity
               title="Levantamiento de cabeza"
               source_image={require('./assets/baby-mobile.png')}
@@ -58,7 +58,7 @@ export default class Tab2 extends React.Component {
               border_color="#90D3EB"
             />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => Actions.generacion()}>
             <BadgeActivity
               title="Generación de sonidos"
               source_image={require('./assets/rattle.png')}

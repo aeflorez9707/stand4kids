@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Dimensions,
   Image,
-  ScrollView,
+  ScrollView,TouchableOpacity
 } from 'react-native';
 import BadgeActivity from './components/badgeActivity';
 
@@ -28,18 +28,22 @@ export default class App extends React.Component {
               flexWrap: 'wrap',
               justifyContent: 'space-between',
             }}>
+             <TouchableOpacity onPress={() => Actions.levantamiento()}>
             <BadgeActivity
               title="Levantamiento de cabeza"
               source_image={require('./assets/baby-mobile.png')}
               background_color="#64d8cb"
               border_color="#64d8cb"
             />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Actions.desarrollov()}>
             <BadgeActivity
               title="Desarrollo Visual"
               source_image={require('./assets/abacus.png')}
               background_color="#CE90EB"
               border_color="#CE90EB"
             />
+            </TouchableOpacity>
             <BadgeActivity
               title="Reflejo  de succión"
               source_image={require('./assets/pacifier.png')}

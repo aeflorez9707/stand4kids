@@ -7,8 +7,8 @@ import { Actions } from 'react-native-router-flux';
 export default class HeaderBack extends React.Component {
   render() {
     return (
-        <View style={{backgroundColor: '#b6ffff'}}>
-            <Header style={{backgroundColor: '#b6ffff', marginTop: 20, elevation: 0}}>
+        <View style={{backgroundColor: '#5d99c6'}}>
+            <Header style={{backgroundColor: '#5d99c6', marginTop: 20, elevation: 0}}>
                 <Left>
                     <AntDesign color={'black'} name="left" size={25} onPress={() => Actions.pop()}/>
                 </Left>
