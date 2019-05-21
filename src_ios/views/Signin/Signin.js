@@ -54,7 +54,7 @@ export default class Signin extends React.Component {
           </Form>
         </Content>
         <Button style={styles.btnSignin} full onPress={() => this.login()} disabled={this.state.btnDisable}>
-          <Text uppercase={false} style={styles.btnTxt}>Iniciar sesión</Text>
+          <Text uppercase={false} style={styles.btnTxt}>Iniciar sesiónes</Text>
         </Button>
       </View>
     );

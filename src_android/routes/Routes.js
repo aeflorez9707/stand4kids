@@ -12,6 +12,8 @@ import Motricidad from '../views/Motricidad/Motricidad';
 import Sonrie from '../views/Sonrie/Sonrie';
 import Veamos from '../views/Veamos/Veamos';
 import LevantarCabeza from '../views/LevantarCabeza/LevantarCabeza';
+import Profesionales from '../views/Profesionales/Profesionales';
+import Fundaciones from '../views/Fundaciones/Fundaciones';
 // Drawers
 import DrawerContent from '../components/Drawer/DrawerContent';
 import Feeds from '../views/Drawers/Feeds/Feeds';
@@ -107,6 +109,8 @@ const Routes = () => {
                 </Drawer>
 
                 <Scene key="avatar" title="Avatar" component={Avatar} hideNavBar />
+                <Scene key="profesionales" title="Profesionales" component={Profesionales} hideNavBar />
+                <Scene key="fundaciones" title="Fundaciones" component={Fundaciones} hideNavBar />
 
             </Scene>
         </Router>

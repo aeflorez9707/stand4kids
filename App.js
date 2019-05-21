@@ -36,9 +36,9 @@ firebase.auth().onAuthStateChanged(this.onAuthStateChanged);
       'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
       //product-sand (google)
       'Product-Sans-Bold': require('./assets/fonts/product-sans/Product-Sans-Bold.ttf'),
-      '': require('./assets/fonts/product-sans/Product-Sans-Bold-Italic.ttf'),
-      '': require('./assets/fonts/product-sans/Product-Sans-Italic.ttf'),
-      '': require('./assets/fonts/product-sans/Product-Sans-Regular.ttf'),
+      'Product-Sans-Bold-Italic': require('./assets/fonts/product-sans/Product-Sans-Bold-Italic.ttf'),
+      'Product-Sans-Italic': require('./assets/fonts/product-sans/Product-Sans-Italic.ttf'),
+      'Product-Sans-Regular': require('./assets/fonts/product-sans/Product-Sans-Regular.ttf'),
       //
       // import your own font
       //

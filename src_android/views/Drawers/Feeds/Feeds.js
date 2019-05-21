@@ -46,16 +46,22 @@ export default class Feeds extends React.Component {
                                  <ScrollView
                                      horizontal={true}
                                      showsHorizontalScrollIndicator={false}
-                                 >
+                                 >   
+                                 <TouchableOpacity onPress={() => Actions.profesionales()}>
                                      <Category imageUri={require('../../../../assets/images/doctor.jpg')}
                                          name="Profesionales"
                                      />
+                                     </TouchableOpacity>
+                                     <TouchableOpacity onPress={() => Actions.fundaciones()}>
                                      <Category imageUri={require('../../../../assets/images/cerotres.png')}
                                          name="Fundaciones"
                                      />
+                                     </TouchableOpacity>
+                                     <TouchableOpacity>
                                      <Category imageUri={require('../../../../assets/images/family.jpeg')}
                                          name="Otros padres"
                                      />
+                                     </TouchableOpacity>
                                  </ScrollView>
                              </View>
                              <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
@@ -155,7 +161,7 @@ export default class Feeds extends React.Component {
        </Card>
        </TouchableOpacity>
 
-       <TouchableOpacity onPress={() => Actions.desarrollo( Actions.midesarrollo())}>
+       <TouchableOpacity >
        <Card>
          <CardItem>
            <Left>
