@@ -36,6 +36,7 @@ export default class App extends React.Component {
               border_color="#64d8cb"
             />
             </TouchableOpacity>
+
             <TouchableOpacity onPress={() => Actions.desarrollov()}>
             <BadgeActivity
               title="Desarrollo Visual"
@@ -44,30 +45,35 @@ export default class App extends React.Component {
               border_color="#CE90EB"
             />
             </TouchableOpacity>
+
             <BadgeActivity
               title="Reflejo  de succión"
               source_image={require('./assets/pacifier.png')}
               background_color="#90D3EB"
               border_color="#90D3EB"
             />
+            <TouchableOpacity onPress={() => Actions.generacion()}>
             <BadgeActivity
               title="Generación de sonidos"
               source_image={require('./assets/rattle.png')}
               background_color="#E4EB90"
               border_color="#E4EB90"
             />
+            </TouchableOpacity>
             <BadgeActivity
               title="Posición de sedente"
               source_image={require('./assets/blocks.png')}
               background_color="#EB90AC"
               border_color="#EB90AC"
             />
+            <TouchableOpacity onPress={() => Actions.empatia()}>
             <BadgeActivity
               title="Empatía"
               source_image={require('./assets/teddy-bear.png')}
               background_color="#EFAC4E"
               border_color="#EFAC4E"
             />
+            </TouchableOpacity>
             <BadgeActivity
               title="Reflejo del Moro"
               source_image={require('./assets/puzzle.png')}
