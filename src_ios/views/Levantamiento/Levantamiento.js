@@ -7,6 +7,7 @@ import {
   Slider,
   ScrollView,
 } from 'react-native';
+
 import HeaderBack from '../../components/Header/HeaderBack';
 import QualActivity from './components/QualActivity';
 
@@ -19,12 +20,13 @@ export default class App extends Component {
     }
   };
   render() {
-    const url = 'https://www.youtube.com/watch?v=Imqmgn_H5N8';
+    const url = 'https://www.youtube.com/watch?v=vmaEmrpv_-I';
 
     return (
       <View style={{ flex: 1 }}>
-      <HeaderBack title="Empatía"/>
+      <HeaderBack title="Levantamiento"/>
         <View style={{ marginTop: 30, marginBottom:20 }}>
+          
         </View>
         <View style={{ flex: 1.5, marginLeft:40, marginRight:40 }}>
           <WebView
@@ -41,26 +43,26 @@ export default class App extends Component {
         <View style={{ flex: 3 }}>
           <ScrollView>
             <Text style={styles.title}>¿Que debes hacer?</Text>
-            <Text style={styles.subtitle}>Realiza distintas expresiones a 15 o 20 centímetros de mi carita.   </Text>
+            <Text style={styles.subtitle}>Acuéstame boca abajo sobre una superficie acolchada. </Text>
 
             <Text style={styles.title}>¿Que debes observar?</Text>
-            <Text style={styles.subtitle}> Puedo imitar tus expresiones más simples. </Text>
+            <Text style={styles.subtitle}>Debo ser capaz de levantar mi cabeza en contra de la gravedad y rotarla hacia alguno de los lados. Si pataleo un poco para ayudarme y me recuesto sobre un lado es normal.  </Text>
 
             <Text style={styles.title}>¿Lograste observar estas características en mí?</Text>
             <Text style={styles.subtitle} />
             <QualActivity
               title = "0"
-              description="No realizo ninguna expresión"
+              description="No pude levantar mi cabeza sobre la superficie"
               background_color = "#CE90EB"
              />
             <QualActivity
               title = "1"
-              description="A veces imito tus expresiones pero no siempre"
+              description="Logré levantar mi cabeza alguna vez y rotarla pero cuando lo volví a intentar no lo logré"
               background_color = "#90D3EB"
              />
             <QualActivity
               title = "2"
-              description="Siempre hago las mismas expresiones que me muestras"
+              description="Levante perfectamente mi cabeza en contra de la gravedad y rotarla hacia alguno de los lados"
               background_color = "#E4EB90"
              />
           </ScrollView>

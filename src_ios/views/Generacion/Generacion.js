@@ -7,9 +7,9 @@ import {
   Slider,
   ScrollView,
 } from 'react-native';
-import HeaderBack from '../../components/Header/HeaderBack';
-import QualActivity from './components/QualActivity';
 
+import QualActivity from './components/QualActivity';
+import HeaderBack from '../../components/Header/HeaderBack';
 export default class App extends Component {
   onNavigationStateChange = navState => {
     if (navState.url.indexOf('https://www.google.com') === 0) {
@@ -19,11 +19,11 @@ export default class App extends Component {
     }
   };
   render() {
-    const url = 'https://www.youtube.com/watch?v=Imqmgn_H5N8';
+    const url = 'https://www.youtube.com/watch?v=Tpl0u-I4R3s';
 
     return (
       <View style={{ flex: 1 }}>
-      <HeaderBack title="Empatía"/>
+      <HeaderBack title="Sonidos"/>
         <View style={{ marginTop: 30, marginBottom:20 }}>
         </View>
         <View style={{ flex: 1.5, marginLeft:40, marginRight:40 }}>
@@ -41,26 +41,26 @@ export default class App extends Component {
         <View style={{ flex: 3 }}>
           <ScrollView>
             <Text style={styles.title}>¿Que debes hacer?</Text>
-            <Text style={styles.subtitle}>Realiza distintas expresiones a 15 o 20 centímetros de mi carita.   </Text>
+            <Text style={styles.subtitle}>Al cambiarme de entorno o tener movimientos repentinos. </Text>
 
             <Text style={styles.title}>¿Que debes observar?</Text>
-            <Text style={styles.subtitle}> Puedo imitar tus expresiones más simples. </Text>
+            <Text style={styles.subtitle}>Tendré una amplia gama de gruñiditos, gemidos, estornudos o hipos pero no te preocupes, es normal. </Text>
 
             <Text style={styles.title}>¿Lograste observar estas características en mí?</Text>
             <Text style={styles.subtitle} />
             <QualActivity
               title = "0"
-              description="No realizo ninguna expresión"
+              description="No tuve reacción alguna"
               background_color = "#CE90EB"
              />
             <QualActivity
               title = "1"
-              description="A veces imito tus expresiones pero no siempre"
+              description="De vez en cuando reacciono a los cambios de entorno"
               background_color = "#90D3EB"
              />
             <QualActivity
               title = "2"
-              description="Siempre hago las mismas expresiones que me muestras"
+              description="Reacciono con alguna de las expresiones"
               background_color = "#E4EB90"
              />
           </ScrollView>

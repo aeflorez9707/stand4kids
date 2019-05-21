@@ -15,11 +15,10 @@ export default class Tab3 extends React.Component {
   render() {
     return (
       <View style={styles.drawerContainer}>
-        <HeaderDefault title="Tab2"/>
+        <HeaderDefault title="Tab40"/>
         <Content padder>
           <Text style={styles.descTxt}>
-            ESTO ES UNA PRUEBA DE TEXTO EN ESTA VENTANA, LOS COMPONENTES SE DECIDIRÁN DESPUÉS
-            PARTE 2
+            Alo
           </Text>
         </Content>
       </View>

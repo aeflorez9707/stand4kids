@@ -42,7 +42,7 @@ export default class Tab2 extends React.Component {
               border_color="#64d8cb"
             />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => Actions.desarrollov()}>
             <BadgeActivity
               title="Desarrollo Visual"
               source_image={require('./assets/abacus.png')}
@@ -74,7 +74,7 @@ export default class Tab2 extends React.Component {
               border_color="#EB90AC"
             />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => Actions.empatia()}>
             <BadgeActivity
               title="Empatía"
               source_image={require('./assets/teddy-bear.png')}

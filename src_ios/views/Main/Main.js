@@ -144,8 +144,7 @@ export default class Main extends React.Component {
     firebase.auth().signInWithEmailAndPassword(this.state.yourEmail, this.state.yourPassword)
  .then(() => {AsyncStorage.setItem('userLoggedIn', 'YES'); Actions.drawer({type: 'reset'});
   }, (error) => { Alert.alert(error.message); return false; });
-
-
+  Actions.drawer({type: 'reset'});
 
   }
 

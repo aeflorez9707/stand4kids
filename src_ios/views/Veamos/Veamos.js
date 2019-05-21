@@ -3,7 +3,7 @@ import { View, Image,TouchableOpacity, Alert } from 'react-native';
 import { Text, Content } from 'native-base';
 import styles from '../../../assets/styles/styles';
 import HeaderBack from '../../components/Header/HeaderBack';
-import logo from '../../../assets/images/smile.png';
+import logo from '../../../assets/images/babySee.png';
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';

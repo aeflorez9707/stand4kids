@@ -8,10 +8,14 @@ import Signup from '../views/Signup/Signup';
 import Main from '../views/Main/Main';
 import Cerotres from '../views/Cerotres/Cerotres';
 import Integracion from '../views/Integracion/Integracion';
-import Motricidad from '../views/Motricidad/Motricidad';
 import Sonrie from '../views/Sonrie/Sonrie';
-import Veamos from '../views/Veamos/Veamos';
 import LevantarCabeza from '../views/LevantarCabeza/LevantarCabeza';
+import Profesionales from '../views/Profesionales/Profesionales';
+import Fundaciones from '../views/Fundaciones/Fundaciones';
+import Levantamiento from '../views/Levantamiento/Levantamiento';
+import Generacion from '../views/Generacion/Generacion';
+import DesarrolloV from '../views/DesarrolloV/DesarrolloV';
+import Empatia from '../views/Empatia/Empatia';
 // Drawers
 import DrawerContent from '../components/Drawer/DrawerContent';
 import Feeds from '../views/Drawers/Feeds/Feeds';
@@ -95,8 +99,7 @@ const Routes = () => {
                     <Scene key="cerotres" title="Cerotres" component={Cerotres} hideNavBar/ >
                     <Scene key="integracion" title="Integracion" component={Integracion} hideNavBar/ >
                     <Scene key="sonrie" title="Sonrie" component={Sonrie} hideNavBar/ >
-                    <Scene key="veamos" title="Veamos" component={Veamos} hideNavBar/ >
-                    <Scene key="motricidad" title="Motricidad" component={Motricidad} hideNavBar/ >
+
                     <Scene key="levantarCabeza" title="Levantar" component={LevantarCabeza} hideNavBar/ >
                     </Scene>
 
@@ -107,6 +110,12 @@ const Routes = () => {
                 </Drawer>
 
                 <Scene key="avatar" title="Avatar" component={Avatar} hideNavBar />
+                <Scene key="profesionales" title="Profesionales" component={Profesionales} hideNavBar />
+                <Scene key="fundaciones" title="Fundaciones" component={Fundaciones} hideNavBar />
+                <Scene key="levantamiento" title="Levantamiento" component={Levantamiento} hideNavBar />
+                <Scene key="desarrollov" title="DesarrolloV" component={DesarrolloV} hideNavBar />
+                <Scene key="empatia" title="Empatia" component={Empatia} hideNavBar />
+                <Scene key="generacion" title="Generacion" component={Generacion} hideNavBar />
 
             </Scene>
         </Router>
